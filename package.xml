@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>publish_anything_ros2_gui</name>
+  <version>1.0.0</version>
+  <description>A GUI tool for publishing ROS2 messages using PyQt5.</description>
+
+  <maintainer email="lihanchen2004@163.com">Lihan Chen</maintainer>
+  <license>Apache-2.0</license>
+
+  <author email="lihanchen2004@163.com">Lihan Chen</author>
+
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>yaml</exec_depend>
+  <exec_depend>python3-pyqt5</exec_depend>
+  <exec_depend>rosidl_runtime_py</exec_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+
+</package>

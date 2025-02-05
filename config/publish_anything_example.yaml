@@ -1,0 +1,83 @@
+GameStatus:
+  interface_type: pb_rm_interfaces/msg/GameStatus
+  topic_name: red_standard_robot1/referee/game_status
+  publish_frequency: 5
+  field_configs:
+    game_progress: {default: 0}
+    stage_remain_time: {default: 420, range: {min: 0, max: 420}}
+
+GameRobotHP:
+  interface_type: pb_rm_interfaces/msg/GameRobotHP
+  topic_name: red_standard_robot1/referee/all_robot_hp
+  publish_frequency: 5
+  field_configs:
+    red_1_robot_hp: {default: 500, range: {min: 0, max: 500}}
+    red_2_robot_hp: {default: 250, range: {min: 0, max: 250}}
+    red_3_robot_hp: {default: 400, range: {min: 0, max: 400}}
+    red_4_robot_hp: {default: 400, range: {min: 0, max: 400}}
+    red_7_robot_hp: {default: 400, range: {min: 0, max: 400}}
+    red_outpost_hp: {default: 1500, range: {min: 0, max: 1500}}
+    red_base_hp: {default: 5000, range: {min: 0, max: 5000}}
+    blue_1_robot_hp: {default: 500, range: {min: 0, max: 500}}
+    blue_2_robot_hp: {default: 250, range: {min: 0, max: 250}}
+    blue_3_robot_hp: {default: 400, range: {min: 0, max: 400}}
+    blue_4_robot_hp: {default: 400, range: {min: 0, max: 400}}
+    blue_7_robot_hp: {default: 400, range: {min: 0, max: 400}}
+    blue_outpost_hp: {default: 1500, range: {min: 0, max: 1500}}
+    blue_base_hp: {default: 5000, range: {min: 0, max: 5000}}
+
+Buff:
+  interface_type: pb_rm_interfaces/msg/Buff
+  topic_name: red_standard_robot1/referee/buff
+  publish_frequency: 5
+  field_configs:
+      recovery_buff: {default: 0, range: {min: 0, max: 100}}
+      cooling_buff: {default: 250, range: {min: 0, max: 10}}
+      defence_buff: {default: 0, range: {min: 0, max: 100}}
+      vulnerability_buff: {default: 0, range: {min: 0, max: 100}}
+      attack_buff: {default: 0, range: {min: 0, max: 100}}
+      remaining_energy: {default: 50, range: {min: 0, max: 50}}
+
+EventData:
+  interface_type: pb_rm_interfaces/msg/EventData
+  topic_name: red_standard_robot1/referee/event_data
+  publish_frequency: 5
+  field_configs:
+    non_overlapping_supply_zone: {default: 0}
+    overlapping_supply_zone: {default: 0}
+    supply_zone: {default: 0}
+    small_energy: {default: 0}
+    big_energy: {default: 0}
+    central_highland: {default: 0}
+    trapezoidal_highland: {default: 0}
+    center_gain_zone: {default: 0}
+
+
+RobotPosition:
+  interface_type: pb_rm_interfaces/msg/GroundRobotPosition
+  topic_name: red_standard_robot1/referee/ground_robot_position
+  publish_frequency: 5
+
+RfidStatus:
+  interface_type: pb_rm_interfaces/msg/RfidStatus
+  topic_name: red_standard_robot1/referee/rfid_status
+  publish_frequency: 5
+
+RobotStatus:
+  interface_type: pb_rm_interfaces/msg/RobotStatus
+  topic_name: red_standard_robot1/referee/robot_status
+  publish_frequency: 5
+  field_configs:
+    robot_id: {default: 0, range: {min: 0, max: 7}}
+    robot_level: {default: 10, range: {min: 1, max: 10}}
+    current_hp: {default: 400, range: {min: 0, max: 400}}
+    maximum_hp: {default: 400, range: {min: 0, max: 400}}
+    shooter_barrel_cooling_value: {default: 80, range: {min: 0, max: 80}}
+    shooter_barrel_heat_limit: {default: 400, range: {min: 0, max: 400}}
+    shooter_17mm_1_barrel_heat: {default: 0, range: {min: 0, max: 500}}
+
+    armor_id: {default: 0, range: {min: 0, max: 3}}
+    hp_deduction_reason: {default: 0}
+
+    projectile_allowance_17mm: {default: 750, range: {min: 0, max: 9999}}
+    remaining_gold_coin: {default: 0, range: {min: 0, max: 9999}}

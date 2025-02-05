@@ -1,0 +1,92 @@
+QMainWindow, QWidget {
+    background-color: #2D2D2D;
+    color: #E0E0E0;
+    font-family: 'Segoe UI';
+    font-size: 10pt;
+}
+
+QTabWidget::pane {
+    border: 1px solid #3D3D3D;
+    border-radius: 4px;
+    margin: 4px;
+}
+
+QTabBar::tab {
+    background: #404040;
+    color: #B0B0B0;
+    padding: 15px 15px;
+    border-radius: 4px 4px 0 0;
+}
+
+QTabBar::tab:selected {
+    background: #505050;
+    color: #FFFFFF;
+    border-bottom: 2px solid #0078D4;
+}
+
+QPushButton {
+    background-color: #0078D4;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    min-width: 80px;
+}
+
+QPushButton:hover {
+    background-color: #006CBB;
+}
+
+QPushButton:pressed {
+    background-color: #005FA3;
+}
+
+QPushButton:checked {
+    background-color: #CC3333;
+}
+
+QSpinBox, QDoubleSpinBox, QComboBox, QLineEdit {
+    background-color: #404040;
+    border: 1px solid #3D3D3D;
+    border-radius: 3px;
+    padding: 3px;
+    min-width: 100px;
+}
+
+QSpinBox:hover, QDoubleSpinBox:hover, QComboBox:hover, QLineEdit:hover {
+    border-color: #0078D4;
+}
+
+QCheckBox {
+    spacing: 10px;
+    padding: 6px 0;
+    min-height: 28px;
+}
+
+QCheckBox::indicator {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #707070;
+    border-radius: 3px;
+    background: #404040;
+}
+
+QCheckBox::indicator:hover {
+    border-color: #0078D4;
+    background: #484848;
+}
+
+QCheckBox::indicator:checked {
+    background: #0078D4;
+    border-color: #0078D4;
+}
+
+QCheckBox::indicator:indeterminate {
+    background: #505050;
+    border-color: #707070;
+}
+
+QCheckBox::indicator:checked:hover {
+    background: #006CBB;
+    border-color: #006CBB;
+}
