@@ -15,7 +15,7 @@
 import importlib
 import os
 import sys
-from typing import Any, Dict
+from typing import Any
 
 import rclpy
 import rclpy.logging
@@ -50,7 +50,7 @@ class ROSPublisherGUI(QMainWindow):
         self.init_ui()
         self.load_style_sheet()
 
-    def load_config(self, path: str) -> Dict[str, Any]:
+    def load_config(self, path: str) -> dict[str, Any]:
         with open(path) as f:
             return yaml.safe_load(f)
 
@@ -81,7 +81,7 @@ class ROSPublisherGUI(QMainWindow):
 
 
 class PublisherWidget(QWidget):
-    def __init__(self, config: Dict[str, Any], ros_node: Node):
+    def __init__(self, config: dict[str, Any], ros_node: Node):
         super().__init__()
         self.config = config
         self.ros_node = ros_node
@@ -225,9 +225,12 @@ class PublisherWidget(QWidget):
         for name in dir(self.msg_class):
             if name.isupper():
                 value = getattr(self.msg_class, name)
-                if isinstance(value, int) and "int" in field_type:
-                    constants[name] = value
-                elif isinstance(value, bool) and field_type == "bool":
+                if (
+                    isinstance(value, int)
+                    and "int" in field_type
+                    or isinstance(value, bool)
+                    and field_type == "bool"
+                ):
                     constants[name] = value
         return constants
 
@@ -275,9 +278,7 @@ class PublisherWidget(QWidget):
     def get_widget_value(self, widget):
         if isinstance(widget, QComboBox):
             return widget.currentData()
-        elif isinstance(widget, QDoubleSpinBox):
-            return widget.value()
-        elif isinstance(widget, QSpinBox):
+        elif isinstance(widget, QDoubleSpinBox) or isinstance(widget, QSpinBox):
             return widget.value()
         elif isinstance(widget, QCheckBox):
             return widget.isChecked()
